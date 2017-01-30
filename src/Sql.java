@@ -17,20 +17,41 @@ public class Sql {
 
     public static void InsertCustomer(Customers cust) {
 
-        try
-
-        {
-            Connection c = null;
-            Statement stmt = null;
+        Connection con = null;
+        Statement stmt = null;
+        try {
             Class.forName("org.sqlite.JDBC");
-            coccccn = DriverManager.getConnection("jdbc:sqlite:C:\\Users\\User\\dbFinalProject.db");
+            con = DriverManager.getConnection("jdbc:sqlite:dbFinalProject");
+            con.setAutoCommit(false);
             System.out.println("Opened database successfully");
-        }
 
-        catch ( Exception e ) {
+            String sql = "INSERT INTO Customers (firstname,lastname,birthdate,telephone,cellphone,mail,city,street,apartment) " +
+            "VALUES (?, ?, ?, ? ,? ,? ,?, ?,? )";
+
+            PreparedStatement statement = con.prepareStatement(sql);
+     {
+
+                 statement.setString(1, cust.getFirstName());
+                 statement.setString(2,cust.getLastName());
+
+                 statement.setString(3,cust.getBirthDate());
+                 statement.setString(4,cust.getTelNum());
+                 statement.setString(5,cust.getCellNum());
+                 statement.setString(6,cust.getMail());
+                 statement.setString(7,cust.getCity());
+                 statement.setString(8,cust.getStreet());
+                 statement.setInt(9,cust.getDep_num());
+                statement.executeUpdate();
+            }
+//            (cust.getFirstName(),cust.getLastName(),cust.getBirthDate(),cust.getTelNum(),cust.getCellNum(),cust.getMail());
+
+            con.commit();
+            con.close();
+        } catch ( Exception e ) {
             System.err.println( e.getClass().getName() + ": " + e.getMessage() );
             System.exit(0);
         }
+        System.out.println("Records created successfully");
 
     }
 
