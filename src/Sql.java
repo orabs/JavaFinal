@@ -1,6 +1,4 @@
-/**
- * Created by User on 30/01/2017.
- */
+
 
 import java.sql.*;
 
@@ -9,7 +7,8 @@ public class Sql {
 
 
 
-   public   Connection c = null;
+
+   public   Connection con = null;
     public Statement stmt = null;
 
 
@@ -24,7 +23,7 @@ public class Sql {
             Connection c = null;
             Statement stmt = null;
             Class.forName("org.sqlite.JDBC");
-            c = DriverManager.getConnection("jdbc:sqlite:C:\\Users\\User\\dbFinalProject.db");
+            coccccn = DriverManager.getConnection("jdbc:sqlite:C:\\Users\\User\\dbFinalProject.db");
             System.out.println("Opened database successfully");
         }
 
