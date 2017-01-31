@@ -4,17 +4,7 @@ import java.sql.*;
 
 public class Sql {
 
-
-
-
-
-
-
-
-
-
-
-    public static void InsertCustomer(Customers cust) {
+    public static boolean InsertCustomer(Customers cust) {
 
         Connection con = null;
         Statement stmt = null;
@@ -49,10 +39,11 @@ public class Sql {
             System.exit(0);
         }
         System.out.println("Records created successfully");
+        return true;
 
     }
 
-    public static void InsertProfessionals(Professionals prof) {
+    public static boolean InsertProfessionals(Professionals prof) {
         Connection con = null;
         Statement stmt = null;
         try {
@@ -85,12 +76,13 @@ public class Sql {
             System.exit(0);
         }
         System.out.println("Records created successfully");
+        return true;
 
     }
 
 
-    public static void InsertFeedBack(FeedBacks feed) {
-
+    public static boolean InsertFeedBack(FeedBacks feed) {
+        return true;
     }
 
     public static void RemoveCustomer(Customers cust) {
