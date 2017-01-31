@@ -1,6 +1,7 @@
 
 
 import java.sql.*;
+import java.util.ArrayList;
 
 public class Sql {
 
@@ -110,6 +111,8 @@ public class Sql {
     public Users[] SelectUsers(){
         Connection c = null;
         Statement stmt = null;
+        ArrayList<Users> users=new ArrayList<Users>();
+        Users temp=new Users();
         try {
             Class.forName("org.sqlite.JDBC");
             c = DriverManager.getConnection("jdbc:sqlite:test.db");
@@ -120,12 +123,10 @@ public class Sql {
             ResultSet rs = stmt.executeQuery( "SELECT * FROM Users;" );
             while ( rs.next() ) {
                 int id = rs.getInt("id");
-                int profid = rs.getInt("id");
-                int id = rs.getInt("id");
-                String  firstname = rs.getString("firstname");
-                int age  = rs.getInt("age");
-                String  address = rs.getString("address");
-                float salary = rs.getFloat("salary");
+                int profid = rs.getInt("profid");
+                int custid = rs.getInt("custid");
+                String  username = rs.getString("username");
+                String password  = rs.getString("password");
 
             }
             rs.close();
