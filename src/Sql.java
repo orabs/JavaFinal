@@ -106,4 +106,37 @@ public class Sql {
     public static void UpdateFeedBack(FeedBacks feed,int feedid) {
 
     }
+
+    public Users[] SelectUsers(){
+        Connection c = null;
+        Statement stmt = null;
+        try {
+            Class.forName("org.sqlite.JDBC");
+            c = DriverManager.getConnection("jdbc:sqlite:test.db");
+            c.setAutoCommit(false);
+            System.out.println("Opened database successfully");
+
+            stmt = c.createStatement();
+            ResultSet rs = stmt.executeQuery( "SELECT * FROM Users;" );
+            while ( rs.next() ) {
+                int id = rs.getInt("id");
+                int profid = rs.getInt("id");
+                int id = rs.getInt("id");
+                String  firstname = rs.getString("firstname");
+                int age  = rs.getInt("age");
+                String  address = rs.getString("address");
+                float salary = rs.getFloat("salary");
+
+            }
+            rs.close();
+            stmt.close();
+            c.close();
+        } catch ( Exception e ) {
+            System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+            System.exit(0);
+        }
+        System.out.println("Operation done successfully");
+
+
+    }
 }

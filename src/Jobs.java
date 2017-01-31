@@ -61,4 +61,6 @@ public class Jobs {
     public String getDetails() {
         return details;
     }
+
+
 }
