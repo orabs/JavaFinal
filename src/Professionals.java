@@ -3,13 +3,13 @@ import java.util.Date;
 /**
  * Created by User on 30/01/2017.
  */
-public class Proffesionals {
+public class Professionals {
 
 
     int Id;
     String FirstName;
     String LastName;
-    Date BirthDate;
+    String BirthDate;
     String TelNum;
     String CellNum;
     String Mail;
@@ -19,9 +19,9 @@ public class Proffesionals {
 
 
 
-    public Proffesionals(){}
+    public Professionals(){}
 
-    public Proffesionals(int Id,String FirstName,String Lastname,Date BirthDate,String TelNum,String CellNum,String Mail,String City,String Street,int dep_num){
+    public Professionals(int Id,String FirstName,String Lastname,String BirthDate,String TelNum,String CellNum,String Mail,String City,String Street,int dep_num){
         this.Id=Id;
         this.FirstName=FirstName;
         this.LastName=Lastname;
@@ -46,7 +46,10 @@ public class Proffesionals {
     public int getId(){return this.Id;}
     public String getFirstName(){return this.FirstName;}
     public String getLastName(){return this.LastName;}
-    public Date getBirthDate(){return this.BirthDate;}
+    public String getBirthDate(){return this.BirthDate;}
+    public String getTelNum(){return this.TelNum;}
+    public String getCellNum(){return this.CellNum;}
+    public String getMail(){return this.Mail;}
     public String getCity(){return this.City;}
     public String getStreet(){return this.Street;}
     public int getDep_num(){return this.dep_num;}
