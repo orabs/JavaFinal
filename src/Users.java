@@ -2,7 +2,6 @@
  * Created by User on 30/01/2017.
  */
 public class Users {
-    //    ?????
     private int Customerid;
     private int Proffesionalid;
     private String Mail;
