@@ -20,8 +20,8 @@ public class Customers {
 
     public Customers(){}
 
-    public Customers(int Id,String FirstName,String Lastname,String BirthDate,String TelNum,String CellNum,String Mail,String City,String Street,int dep_num){
-        this.Id=Id;
+    public Customers(String FirstName,String Lastname,String BirthDate,String TelNum,String CellNum,String Mail,String City,String Street,int dep_num){
+
         this.FirstName=FirstName;
         this.LastName=Lastname;
         this.BirthDate=BirthDate;
